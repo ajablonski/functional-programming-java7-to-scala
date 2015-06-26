@@ -1,6 +1,7 @@
 package com.thoughtworks.jcprogram.functional.exercise;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 import static java.util.Arrays.asList;
 
@@ -18,6 +19,9 @@ public class StringReducer {
     }
 
     public String reduceToFirstLetterOfLengthFourStrings(List<String> strings) {
-        return "";
+        return strings.stream()
+                .filter(string -> string.length() == 4)
+                .map(string -> Character.toString(string.charAt(0)))
+                .collect(Collectors.joining(""));
     }
 }
