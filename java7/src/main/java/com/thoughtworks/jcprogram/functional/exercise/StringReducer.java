@@ -18,6 +18,12 @@ public class StringReducer {
     }
 
     public String reduceToFirstLetterOfLengthFourStrings(List<String> strings) {
-        return "";
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String string : strings) {
+            if (string.length() == 4) {
+                stringBuilder.append(string.charAt(0));
+            }
+        }
+        return stringBuilder.toString();
     }
 }
