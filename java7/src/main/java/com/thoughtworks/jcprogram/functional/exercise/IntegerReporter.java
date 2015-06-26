@@ -21,7 +21,10 @@ public class IntegerReporter {
         StringBuilder stringBuilder = new StringBuilder();
         for (Integer number : numbers) {
             if (number > 4) {
-                stringBuilder.append(Math.sqrt(number));
+                if (stringBuilder.length() > 0) {
+                    stringBuilder.append(", ");
+                }
+                stringBuilder.append(Math.round(Math.sqrt(number)));
             }
         }
         return stringBuilder.toString();
